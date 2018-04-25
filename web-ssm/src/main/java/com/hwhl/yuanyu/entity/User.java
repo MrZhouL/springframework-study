@@ -1,15 +1,38 @@
 package com.hwhl.yuanyu.entity;
 
+import com.hwhl.yuanyu.validatorannotation.*;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.GroupSequence;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+
 /**
  * Created by zhoulei on 2018/4/8.
  */
-public class User {
+@GroupSequence({RegisterGroupValidator.class,First.class, Second.class, User.class})
+public class User implements Serializable {
+
     private Integer id;
+
+    @NotBlank(groups = {RegisterGroupValidator.class})
     private String nickname;
+
+    @NotBlank(groups = {RegisterGroupValidator.class})
+    @StrongPassword(groups = {RegisterGroupValidator.class})
     private String password;
+
+    @NotBlank(groups = {RegisterGroupValidator.class})
     private String headimg;
+
+
+    @NotBlank(groups = {RegisterGroupValidator.class})
+    @PhoneLocalDate(groups = {RegisterGroupValidator.class})
     private String phone;
+
     private Integer age;
+
     private String profession;
     private String signature;
     private String character;

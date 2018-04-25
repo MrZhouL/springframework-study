@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
  * Created by zhoulei on 2018/4/15.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:properties/development-db.properties","classpath:spring-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
 public class UserMapperTest {
 
     @Resource

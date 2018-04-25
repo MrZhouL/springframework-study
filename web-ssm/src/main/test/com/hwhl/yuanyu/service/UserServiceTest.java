@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
 public class UserServiceTest {
 
-    @Autowired(required = false)
+    @Autowired()
     private UserService userService;
 
     @Test
